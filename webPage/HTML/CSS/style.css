@@ -1,0 +1,304 @@
+.hero-img { /* Initial visible image */
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: url('/webPage/images/shoe1.jpg');
+   background-size: cover;
+   background-position-x: 20%;
+   background-position-y: 40%;
+   width: 100%;
+   height: 100vh;
+   z-index: -1;
+   animation: introLoad 2s forwards;
+   /* overflow: hidden; */
+}
+
+.hero {
+   margin-bottom: 25em;
+}
+
+.menu { /* Menu button */
+   float: right;
+   margin-top: -.1em;
+   width: 0.5em;
+   width: 24px;
+   height: 24px;
+}
+
+.close { /* Close button */
+   float: right;
+   margin: 2em;
+   width: 2.5em;
+   width: 24px;
+   height: 24px;
+   color: black;
+}
+
+.logo { /* Bran logo */ 
+   color: white;
+   font-weight: bold;
+}
+
+.subhead { /* Iinitial description */
+   font-size: 1.4rem;
+}
+
+.down-arrow { /* White arrow */
+   stroke: white;
+   position: absolute;
+   bottom: 2em;
+   width: 1em;
+   animation: moveArrow 1s alternate-reverse infinite;
+}
+
+.title { /* Images titles */
+   font-weight: bold;
+   font-size: 1.25rem;
+}
+
+.description { /* Images descriptions */
+   line-height: 1.5;
+}
+
+.more-info { /* First Image */
+   
+}
+
+body { /* em used for margins */
+   margin: 1.5em; 
+   font-family: 'Poppins', sans-serif;
+}
+
+nav {
+   color: black;
+   pad: 0.75em 2em;
+   display: block;
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+}
+
+h1 {
+   font-style: rem;
+   margin-top: 2em;
+   line-height: 3.3rem;
+}
+
+a {  /* rem used for font-sizees */
+   text-decoration: none;
+   font-size: 1.3rem;
+}
+
+a.ul { /* For hyperlinks with class="ul" */
+   color: black; 
+   padding: .75em 2em; /* Padding wont't work unless display is block*/
+   display: block;
+   width: 100%; 
+}
+
+a:hover.hv { /* For hyperliks with class="hv" // hover changes the color around the hyperlink when the mouse is on it*/
+   background-color: rgb(219, 216, 216);
+ }
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: white;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+}
+
+ul {
+   list-style-type: none;
+   padding: 0;
+   margin-top: 8em;
+}
+
+img.pics { /* For images with shoes info */
+   width: 100%;
+   object-fit: cover;
+   height: 13em;
+}
+
+img.pics2 { /* For specific pics with shoes info */
+   width: 100%;
+   object-fit: cover;
+   height: 13em;
+}
+
+section.hero { /* For the first visible text section */
+   color: white;
+   height: 90v;
+   animation: moveDown 1s ease-in-out forwards;
+   opacity: 0;
+}
+
+@media only screen and (min-width: 680px) { /* For others than PC */
+
+   body {
+      margin: 1.5em 5em;
+      font-family: 'Poppins', sans-serif;
+   }
+
+   .hero {
+      margin-top: 10;
+   }
+}
+
+@media only screen and (min-width: 920px) { /* For others than PC */
+
+   .menu {
+      display: none;
+   }
+
+   nav {
+      transform: translateX(0);
+      position: unset;
+      display: block;
+      width: auto;
+      height: auto;
+      background: none;
+
+   }
+
+   .close {
+      display: none;
+   }
+
+   ul {
+      display: flex;
+      margin: 0;
+   }
+
+   a.ul {
+      color: white;
+      padding: .5em 1.5em;
+      font-size: .9rem;
+   }
+
+   a:hover.hv { 
+      background: none;
+      text-decoration: underline;
+    }
+
+    .hero-img {
+       left: unset;
+       right: 0;
+       width: 50%;
+       height: 42em;
+    }
+
+    .logo {
+       color: black;
+    }
+
+    span {
+       color: red;
+    }
+
+    section.hero {
+       color: black;
+       height: auto;
+       width: 40%;
+       margin-bottom: 8em;
+    }
+
+    svg.down-arrow {
+       stroke: black;
+       position: unset;
+    }
+
+    path {
+       fill: black;
+    }
+
+    .feature {
+       display: grid;
+       grid-template-columns: repeat(2, auto);
+       gap: 3em;
+       margin-bottom: 8em;
+       margin-top: 10em;
+    }
+
+    img.pics {
+      text-align: right;
+      width: 30em;
+      height: 14em;
+    }
+
+    .content {
+       text-align: right;
+       width: 25em;
+    }
+
+   .feature.left {
+      grid-template-areas: 
+      "left right";
+      grid-area: left;
+   }
+   
+   img.pics2 {
+      grid-area: left;
+      width: 30em;
+      height: 14em;
+   }
+
+   .content2 {
+      text-align: left;
+   }
+
+}
+
+.open-nav {
+   transform: translateX(0%);
+}
+
+@media only screen and (min-width: 1200px) { /* For others than PC */
+   .wrapper {
+      width: 1200px;
+      margin: 0 auto;
+   }
+
+   .feature {
+      gap: 0;
+      margin-top: 20em;
+   }
+}
+
+@keyframes introLoad {
+   from {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+
+   to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+}
+
+@keyframes moveArrow {
+   from {
+      transform: translateY(180px);
+   }
+
+   to {
+      transform: translateY(200px);
+   }
+}
+
+@keyframes moveDown {
+   from {
+      transform: translateY(-100px);
+   }
+
+   to {
+      transform: translateY(0px);
+      opacity: 1;
+   }
+}
